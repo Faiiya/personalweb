@@ -1,43 +1,117 @@
-body {
-    overflow-x: hidden; /* Hide scrollbars */
-    overflow-y: hidden; /* Hide scrollbars */
+html, body {
+    font-family: customFont;
   }
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+
+:root{
+  overflow-x: hidden;
+}
 
 h1{
-    font-size: 4rem;
+    font-family: customFont;
+    font-size: 4.5rem;
+    p{
+      font-size: 1rem;
+      color:gray;
+    }
   }
 
-  .under{
-      margin-top: 10px;
+@keyframes fadeInView {
+  0%{
+    transform: translate(0, 30px);
+    opacity: 0;
   }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+} 
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
 .texthero {
     color:black;
     text-align: left;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-
+    position: relative;
+    width: 50%;
+    top:-5%;
+    left:15%;
     @media only screen and (max-width: 1022px) {
         text-align: center;
-        top:50%;
-        left:50%;
+        left:0%;
+        width: 100%;
+        padding-left:15px;
+        padding-right: 15px;
     }
   }
+
+  .texthero {
+    h1, h1 p{
+      opacity: 0;
+      animation: fadeInView 1s forwards;
+      animation-delay: 1s;
+    }
+    p{
+      opacity: 0;
+      animation: fadeInView 1s forwards;
+      animation-delay: 1.6s;
+    }
+  }
+
+section{
+  top:-70px;
+  bottom: -70px;
+  position: relative;
+}
+
 .hero {
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    
+    display: flex;
+    align-items: center;
     /* Set a specific height */
     height: 100vh;
-    margin-bottom: -77px;
     background-image: url("../images/background.jpg");
 
-    @media only screen and (max-width: 1022px) {
-      margin-bottom: -68px !important;
-      padding-bottom: 68px !important;
-    }
 }
   
+.test1{
+  height:100%;
+  background: #eecb86;
+}
+.navbar {
+  z-index: +1;
+  height:70px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  display:flex;
+  top: 0;
+  background:white;
+  opacity: 0;
+}
+
+.navbar.notscrolled{
+  animation:fadeout .5s forwards;
+}
+.navbar.scrolled{
+  animation:fadein .5s forwards;
+}
+@font-face {
+  font-family: customFont;
+  src: url("../style/Muli-VariableFont_wght.ttf");
+  font-display: auto
+}
+
