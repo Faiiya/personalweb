@@ -13,15 +13,15 @@ import NavBar from "../components/navbar"
 const Layout = ({ children }) => {
 
   return (
-    <>
+    <div className="wrapper">
       <NavBar/>
-      <main>{children}</main>
+      <main >{children}</main>
       <footer className="bg-black text-white w-full">
         <div className="p-5">
         © {new Date().getFullYear()}, Big Boss {` `}
         </div>  
       </footer>
-    </>
+    </div>
   )
 }
 

@@ -3,8 +3,8 @@ import "../style/main.scss"
 import Layout from "../components/layout"
 import Scroll from "../components/scrollbutton"
 import SplitSection from '../components/splitsection';
-import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import BackgroundImage from 'gatsby-background-image'
 
 function IndexPage() {
   const [load, setLoad] = useState(0);
@@ -12,7 +12,7 @@ function IndexPage() {
   query {
     file(relativePath: { eq: "background.jpg" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 1000) {
+        fluid(quality: 90, maxWidth: 1920) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -23,18 +23,21 @@ function IndexPage() {
  return (
     <Layout>
       <section className="hero">
-        <Img
-          className="bgimg"
-          fluid={data.file.childImageSharp.fluid}
-          onLoad={() => setLoad("loaded")}
-        />
-        <div className={"texthero bold "+load}>
+        <BackgroundImage
+            className="bgimg"
+            style={{maxWidth:'100%'}}
+            objectFit="cover"
+            fluid={data.file.childImageSharp.fluid}
+            onLoad={() => setLoad("loaded")}
+        >
+          <div className={"texthero bold "+load}>
           <h1>Manuel Moreno<p>software developer</p></h1>
           <p>Vestibulum ante ipsum primis in faucibus stibulum malesuada agnacilisis pem ex hendrerit erat. 
             Maecenas eu suscipit leo. Quisque sit amet molestie justo, at ultrices lorem. Nam ullamcorper eleifend nisi. 
             Integer vel erat dui. Fusce ullamcorper imperdiet dapibus. Integer vehicula scelerisque odio vel vestibulum.</p>
-        </div>
-        <Scroll/>
+          </div>
+          <Scroll/>
+        </BackgroundImage>   
       </section>
       <section className="test1 bg-white mb-0 pb-0">
         <h2 className="center py-10 font-bold text-2xl">Mis proyectos</h2>
@@ -96,3 +99,7 @@ function IndexPage() {
 }
 
 export default IndexPage
+
+/**
+ *           
+ */

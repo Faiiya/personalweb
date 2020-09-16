@@ -23,6 +23,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
+    'gatsby-background-image',
     `gatsby-transformer-sharp`, 
     {
       resolve: `gatsby-plugin-manifest`,

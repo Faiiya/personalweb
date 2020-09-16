@@ -1,5 +1,4 @@
 import React from "react"
-import AOS from 'aos'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -34,7 +33,7 @@ class NavBar extends React.Component {
 
     componentDidMount() {
         window.addEventListener("scroll", this.handleScroll);
-        AOS.init();
+        
     }
   
 }
