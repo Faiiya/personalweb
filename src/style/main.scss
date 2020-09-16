@@ -71,12 +71,12 @@ h1{
     h1, h1 p{
       opacity: 0;
       animation: fadeInView 1s forwards;
-      animation-delay: .8s;
+      animation-delay: 1s;
     }
     p{
       opacity: 0;
       animation: fadeInView 1s forwards;
-      animation-delay: 1.4s;
+      animation-delay: 1.8s;
     }
   }
 
