@@ -12,7 +12,7 @@ function IndexPage() {
   query {
     file(relativePath: { eq: "background.jpg" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 2000) {
+        fluid(quality: 100, maxWidth: 1000) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -36,7 +36,7 @@ function IndexPage() {
         </div>
         <Scroll/>
       </section>
-      <section className="test1 bg-white">
+      <section className="test1 bg-white mb-0 pb-0">
         <h2 className="center py-10 font-bold text-2xl">Mis proyectos</h2>
         <SplitSection
           id="services"

@@ -15,18 +15,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <NavBar/>
-      <div
-        style={{
-          margin: `0 auto`,
-        }}
-      >
-        <main>{children}</main>
-        <footer className="bg-black text-white w-full">
-          <div className="p-5">
-          © {new Date().getFullYear()}, Big Boss {` `}
-          </div>  
-        </footer>
-      </div>
+      <main>{children}</main>
+      <footer className="bg-black text-white w-full">
+        <div className="p-5">
+        © {new Date().getFullYear()}, Big Boss {` `}
+        </div>  
+      </footer>
     </>
   )
 }
