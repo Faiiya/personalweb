@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    font-family: customFont;
-  }
   ::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
@@ -51,23 +48,26 @@ h1{
   from { opacity: 1; }
   to   { opacity: 0; }
 }
-.texthero {
+.texthero{
     color:black;
     text-align: left;
-    position: relative;
+    position: absolute;
     width: 50%;
-    top:-5%;
+    top:40%;
     left:15%;
+    opacity: 0;
     @media only screen and (max-width: 1022px) {
         text-align: center;
         left:0%;
+        top:10%;
         width: 100%;
         padding-left:15px;
         padding-right: 15px;
     }
   }
 
-  .texthero {
+  .texthero.loaded {
+    opacity: 1;
     h1, h1 p{
       opacity: 0;
       animation: fadeInView 1s forwards;
@@ -86,18 +86,24 @@ section{
   position: relative;
 }
 
-.hero {
+.hero{ 
+  display: inline-block;
+  width: 100%;
+  height:100vh;
+  overflow: scroll;
+  .bgimg{
     /* Position and center the image to scale nicely on all screens */
-    background-image: url("../images/background.jpg");
+    pointer-events: none;
+    position: fixed!important;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    display: flex;
     align-items: center;
-    /* Set a specific height */
-    height: 100vh;
-    
+   } 
 }
 
 
