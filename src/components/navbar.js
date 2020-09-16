@@ -1,4 +1,5 @@
 import React from "react"
+import AOS from 'aos'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -11,14 +12,20 @@ class NavBar extends React.Component {
     }
     render () {
         return (
-            <div className={"navbar "+this.state.scrolled}>
-
-            </div>
+            <header className={"navbar "+this.state.scrolled}>
+                <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            </header>
         )
     }
 
     handleScroll(){
-        this.setState({ scrolled: window.scrollY < 75 ? "notscrolled" : "scrolled" });
+        if (this.state.scrolled !== ""){
+            this.setState({ scrolled: window.scrollY < 75 ? "notscrolled" : "scrolled" });
+        } 
+        else{
+            this.setState({ scrolled: window.scrollY < 75 ? "" : "scrolled" });
+        }    
     }
 
     componentWillUnmount() {
@@ -26,8 +33,8 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-        console.log(document.scrollY);
         window.addEventListener("scroll", this.handleScroll);
+        AOS.init();
     }
   
 }
