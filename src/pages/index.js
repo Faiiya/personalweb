@@ -5,6 +5,7 @@ import Scroll from "../components/scrollbutton"
 import SplitSection from '../components/splitsection';
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from 'gatsby-background-image'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 function IndexPage() {
   const [load, setLoad] = useState(0);
@@ -32,15 +33,30 @@ function IndexPage() {
         >
           <div className={"texthero bold "+load}>
           <h1>Manuel Moreno<p>software developer</p></h1>
-          <p>Vestibulum ante ipsum primis in faucibus stibulum malesuada agnacilisis pem ex hendrerit erat. 
-            Maecenas eu suscipit leo. Quisque sit amet molestie justo, at ultrices lorem. Nam ullamcorper eleifend nisi. 
-            Integer vel erat dui. Fusce ullamcorper imperdiet dapibus. Integer vehicula scelerisque odio vel vestibulum.</p>
+          <p className="sm:w-full md:w-1/2">Interesado en la tecnologia desde pequeño, afrontar nuevos proyectos cada vez mas ambiciones es una de mis mayores pasiones.</p>
+          <div>
+            <h3 className="text-lg">¿Preparado para ser el siguiente?</h3>
+            <div className="mt-4">
+              <AniLink  className="custombutton mr-3 z-3 py-2 px-4 text-orange-400 font-semibold border-2 border-orange-400 rounded bg-opacity-25 bg-black hover:bg-orange-400 hover:text-white hover:bg-opacity-75"
+                        paintDrip 
+                        to="contact" 
+                        hex="#F6AD55"
+                        duration={1}>
+                Contratame</AniLink>
+              <AniLink  className="custombutton     z-3 py-2 px-4 text-orange-400 font-semibold border-2 border-orange-400 rounded bg-opacity-25 bg-black hover:bg-orange-400 hover:text-white hover:bg-opacity-75"
+                        paintDrip 
+                        to="curriculum" 
+                        hex="#F6AD55"
+                        duration={1}>
+                Curriculum</AniLink>
+            </div>
+          </div>
           </div>
           <Scroll/>
         </BackgroundImage>   
       </section>
       <section className="test1 bg-white mb-0 pb-0">
-        <h2 className="center py-10 font-bold text-2xl">Mis proyectos</h2>
+        <h2 className="center py-10 font-bold text-6xl">Mis proyectos</h2>
         <SplitSection
           id="services"
           primarySlot={

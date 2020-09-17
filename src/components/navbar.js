@@ -11,10 +11,11 @@ class NavBar extends React.Component {
     }
     render () {
         return (
-            <header className={"navbar "+this.state.scrolled}>
-                <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-            </header>
+            <div className={"navbar sticky z-30 top-0 h-nv "+this.state.scrolled}>                
+                <div>
+
+                </div>
+            </div>
         )
     }
 
