@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import "../style/main.scss"
-import Layout from "../components/layout"
 import Scroll from "../components/scrollbutton"
 import SplitSection from '../components/splitsection';
 import { useStaticQuery, graphql } from "gatsby"
@@ -22,7 +21,7 @@ function IndexPage() {
 `)
 
  return (
-    <Layout>
+    <>
       <section className="hero">
         <BackgroundImage
             className="bgimg"
@@ -110,7 +109,7 @@ function IndexPage() {
             </p>}
           />
       </section>
-    </Layout>
+    </>
     )
 }
 

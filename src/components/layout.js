@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       </Helmet>
       <main >{children}</main>
-      <footer className="bg-black text-white w-full z-3 ">
+      <footer className="bg-black text-white w-full z-30">
         <div className="p-5">
         © {new Date().getFullYear()}, Big Boss {` `}
         </div>  
