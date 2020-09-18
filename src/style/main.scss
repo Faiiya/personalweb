@@ -80,31 +80,31 @@ h1{
     }
   }
 
-  .texthero.loaded {
-    opacity: 1;
-    h1, h1 p{
-      opacity: 0;
-      animation: fadeInView 1s forwards;
-      animation-delay: 1s;
+.texthero.loaded {
+  opacity: 1;
+  h1, h1 p{
+    opacity: 0;
+    animation: fadeInView 1s forwards;
+    animation-delay: 1s;
+  }
+  p{
+    opacity: 0;
+    animation: fadeInView 1s forwards;
+    animation-delay: 1.8s;
+  }
+  div{
+    h3{
+    opacity: 0;
+    animation: fadeInView 1s forwards;
+    animation-delay: 2s;
     }
-    p{
+    .custombutton{
       opacity: 0;
       animation: fadeInView 1s forwards;
-      animation-delay: 1.8s;
-    }
-    div{
-      h3{
-      opacity: 0;
-      animation: fadeInView 1s forwards;
-      animation-delay: 3s;
-      }
-      .custombutton{
-        opacity: 0;
-        animation: fadeInView 1s forwards;
-        animation-delay: 3.5s;
-      }
+      animation-delay: 2.2s;
     }
   }
+}
 
 
 
@@ -135,22 +135,19 @@ section{
    } 
 }
 
-
-  
 .test1{
   height:100%;
   width: 100%;
   top:+0px!important;
-}
-.navbar {
-  background:#f4e1b2;
-  opacity: 0;
 }
 
 footer{
   position: relative;
 }
 
+.navbar {
+  opacity: 0;
+}
 .navbar.notscrolled{
   animation:fadeout .5s forwards;
 }
